@@ -1,8 +1,13 @@
-import React from 'react'
-import phoneImg from './images/phone.svg'
+import React from "react";
+import phoneImg from "./images/phone.svg";
+import hero from "./images/hero.svg";
 
 const Hero = () => {
-  return <h2>hero component</h2>
-}
+    return (
+        <div>
+            <img src={hero} />
+        </div>
+    );
+};
 
-export default Hero
+export default Hero;
