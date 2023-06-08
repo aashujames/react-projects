@@ -6,7 +6,7 @@ const StripeContext = React.createContext(null);
 const StripeProvider = ({ children }) => {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    // const [item, setItem] = useState(sublinks);
+    const [sublink, setSublink] = useState({ page: "", links: [] });
 
     const openSidebar = () => {
         setIsSidebarOpen(true);
@@ -15,8 +15,9 @@ const StripeProvider = ({ children }) => {
         setIsSidebarOpen(false);
     };
 
-    const openSubmenu = () => {
-        // const sublink = sublinks.find((item) => {item.page === })
+    const openSubmenu = (text) => {
+        const sublink = sublinks.find((item) => item.page === text);
+        setSublink(sublink);
         setIsSidebarOpen(true);
     };
     const closeSubmenu = () => {
@@ -25,7 +26,14 @@ const StripeProvider = ({ children }) => {
 
     return (
         <StripeContext.Provider
-            value={{ openSidebar, closeSidebar, closeSubmenu, openSubmenu }}
+            value={{
+                openSidebar,
+                closeSidebar,
+                closeSubmenu,
+                openSubmenu,
+                isSidebarOpen,
+                isSubmenuOpen
+            }}
         >
             {children}
         </StripeContext.Provider>

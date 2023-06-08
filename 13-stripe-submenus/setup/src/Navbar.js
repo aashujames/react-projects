@@ -5,7 +5,9 @@ import { FaBars } from "react-icons/fa";
 const Navbar = () => {
     return (
         <div>
-            <div>stripe</div>
+            <div>
+                <img src={logo} />
+            </div>
             <div></div>
             <div></div>
         </div>
