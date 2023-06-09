@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import sublinks from "./data";
 
-const StripeContext = React.createContext(null);
+const StripeContext = React.createContext();
 
 const StripeProvider = ({ children }) => {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -40,7 +40,7 @@ const StripeProvider = ({ children }) => {
     );
 };
 
-export const GlobalStripe = () => {
+export const useGlobalStripe = () => {
     return useContext(StripeContext);
 };
 
